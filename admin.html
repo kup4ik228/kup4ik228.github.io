@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель — ТеплоЛюкс</title>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- ===== ЛОГИН ===== -->
+    <div class="admin-login" id="adminLogin">
+        <div class="login-box">
+            <div class="login-logo">
+                <img src="Img/Logo.png" alt="ТеплоЛюкс">
+                <h2>Вход в админ-панель</h2>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Логин</label>
+                    <input type="text" id="username" value="" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" value="" required>
+                </div>
+                <button type="submit" class="login-btn">Войти</button>
+            </form>
+            
+        </div>
+    </div>
+
+    <!-- ===== АДМИН-ПАНЕЛЬ ===== -->
+    <div class="admin-panel" id="adminPanel" style="display: none;">
+        
+        <!-- Сайдбар -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <img src="Img/Logo.png" alt="ТеплоЛюкс">
+                <h3>ТеплоЛюкс</h3>
+                <p>Админ-панель</p>
+            </div>
+            
+            <div class="admin-user" id="adminUserInfo"></div>
+            
+            <nav class="admin-nav">
+                <ul>
+                    <li class="active" onclick="AdminPage.showPage('dashboard', this)">
+                        <span>📊</span> Дашборд
+                    </li>
+                    <li onclick="AdminPage.showPage('receptions', this)">
+                        <span>📨</span> Приёмная
+                        <span class="admin-badge" id="receptionsBadge">0</span>
+                    </li>
+                    <li onclick="AdminPage.showPage('restrictions', this)">
+                        <span>🚧</span> Ограничения
+                        <span class="admin-badge" id="restrictionsBadge">0</span>
+                    </li>
+                    <li onclick="AdminPage.showPage('applications', this)">
+                        <span>💼</span> Заявки
+                    </li>
+                    <li onclick="AdminPage.showPage('settings', this)">
+                        <span>⚙️</span> Настройки
+                    </li>
+                    <li onclick="AdminPage.logout()">
+                        <span>🚪</span> Выход
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Контент -->
+        <main class="admin-content">
+            <div class="admin-header">
+                <h1 id="pageTitle">📊 Дашборд</h1>
+                <div>
+                    <span id="adminDateTime"></span>
+                    <button class="refresh-btn" onclick="AdminPage.refreshData()" title="Обновить">🔄</button>
+                </div>
+            </div>
+            
+            <div id="adminPages"></div>
+
+            <!-- Модальное окно добавления ограничения -->
+            <div class="modal" id="restrictionModal" style="display: none;">
+                <div class="modal-content" style="max-width: 600px;">
+                    <div class="modal-header">
+                        <h3>Добавить ограничение</h3>
+                        <button class="modal-close" onclick="closeRestrictionModal()">×</button>
+                    </div>
+                    <form id="restrictionForm">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Улицы (вводите по одной, нажимайте Enter)</label>
+                                <div class="streets-input">
+                                    <input type="text" id="streetInput" placeholder="Введите название улицы">
+                                    <button type="button" onclick="addStreetToList()" class="add-street-btn">+</button>
+                                </div>
+                                <div class="streets-list" id="streetsList"></div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Дата начала *</label>
+                                    <input type="date" id="dateFrom" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Дата окончания *</label>
+                                    <input type="date" id="dateTo" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Время начала</label>
+                                    <input type="time" id="timeFrom" value="09:00">
+                                </div>
+                                <div class="form-group">
+                                    <label>Время окончания</label>
+                                    <input type="time" id="timeTo" value="17:00">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Причина отключения *</label>
+                                <select id="reason" required>
+                                    <option value="repair">🔧 Плановый ремонт</option>
+                                    <option value="emergency">🚨 Аварийные работы</option>
+                                    <option value="maintenance">🛠️ Техническое обслуживание</option>
+                                    <option value="upgrade">⚡ Модернизация сетей</option>
+                                    <option value="other">📋 Другое</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Подробное описание</label>
+                                <textarea id="description" rows="3" placeholder="Дополнительная информация о ограничении..."></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick="closeRestrictionModal()" class="cancel-btn">Отмена</button>
+                            <button type="submit" class="save-btn">Сохранить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== СКРИПТЫ ===== -->
+    <script src="js/core.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/ui/header.js"></script>
+    <script src="js/ui/ui-helpers.js"></script>
+    <script src="js/components/restrictions.js"></script>
+    <script src="js/pages/admin.js"></script>
+</body>
+</html>

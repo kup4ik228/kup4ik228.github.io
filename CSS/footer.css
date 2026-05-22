@@ -1,0 +1,224 @@
+/* ========================================
+   FOOTER.CSS - Стили футера
+   ======================================== */
+
+/* ===== ФУТЕР ===== */
+.site-footer {
+    background: #B8D0FF;
+    color: #000000;
+    padding: 50px 0 30px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    gap: 0;
+}
+
+/* ===== КОЛОНКИ ФУТЕРА ===== */
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+/* Первая колонка (логотип) */
+.footer-column:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* ===== ЛОГОТИП В ФУТЕРЕ ===== */
+.footer-logo {
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    max-width: 180px;
+    height: auto;
+    display: block;
+}
+
+/* ===== ЗАГОЛОВКИ КОЛОНОК ===== */
+.footer-column h3 {
+    color: #5d3d99;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Декоративная линия под заголовком */
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #5d3d99;
+    border-radius: 1px;
+    transition: width var(--transition-base);
+}
+
+.footer-column:hover h3::after {
+    width: 60px;
+}
+
+/* ===== МЕНЮ ФУТЕРА ===== */
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 12px;
+}
+
+.footer-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-menu a {
+    color: #000000;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    position: relative;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+/* Подчёркивание при наведении */
+.footer-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #5d3d99;
+    transition: width var(--transition-base);
+}
+
+.footer-menu a:hover {
+    color: #5d3d99;
+    padding-left: 5px;
+}
+
+.footer-menu a:hover::after {
+    width: 100%;
+}
+
+/* ===== КОПИРАЙТ ===== */
+.copyright {
+    color: #6b6b6b;
+    line-height: 1.6;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
+    .footer-container {
+        gap: 20px;
+    }
+
+    .footer-column {
+        flex: 0 0 calc(50% - 20px);
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 40px 0 25px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0 20px;
+    }
+
+    .footer-column {
+        flex: 1 1 100%;
+        min-width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .footer-logo img {
+        max-width: 150px;
+    }
+
+    .footer-menu li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 30px 0 20px;
+    }
+
+    .footer-container {
+        padding: 0 15px;
+    }
+
+    .footer-column h3 {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+
+    .footer-column h3::after {
+        width: 30px;
+    }
+
+    .footer-logo img {
+        max-width: 130px;
+    }
+
+    .footer-menu a {
+        font-size: 13px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-footer {
+        padding: 25px 0 15px;
+    }
+
+    .footer-container {
+        padding: 0 10px;
+    }
+
+    .footer-column {
+        margin-bottom: 15px;
+    }
+
+    .footer-column h3 {
+        font-size: 14px;
+    }
+
+    .footer-menu li {
+        margin-bottom: 8px;
+    }
+}

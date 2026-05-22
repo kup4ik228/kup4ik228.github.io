@@ -1,0 +1,504 @@
+/* ========================================
+   CONTACTS.CSS - Стили страницы контактов
+   ======================================== */
+
+/* ===== ГЕРОЙ КОНТАКТОВ ===== */
+.contacts-hero {
+    background: var(--gradient-hero);
+    color: var(--color-white);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contacts-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.03) 0px,
+        rgba(255, 255, 255, 0.03) 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    animation: spin 20s linear infinite;
+}
+
+.contacts-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    color: var(--color-white);
+}
+
+.contacts-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== СЕКЦИЯ КОНТАКТНОЙ ИНФОРМАЦИИ ===== */
+.contacts-info-section {
+    padding: 80px 0;
+    background: var(--color-bg);
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== КАРТОЧКИ КОНТАКТОВ ===== */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-card-contact {
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    text-align: center;
+}
+
+.info-card-contact:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(145, 49, 255, 0.2);
+}
+
+.info-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.info-card-contact h3 {
+    color: var(--color-text);
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.info-card-contact p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+
+.info-card-contact a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: color var(--transition-fast);
+    display: inline-block;
+}
+
+.info-card-contact a:hover {
+    color: var(--color-primary-dark);
+}
+
+.work-time {
+    display: inline-block;
+    background: var(--color-success-light);
+    color: var(--color-success);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: all var(--transition-base);
+}
+
+.work-time.closed {
+    background: #ffebee;
+    color: #f44336;
+}
+
+/* ===== АВАРИЙНАЯ СЛУЖБА ===== */
+.info-card-contact.emergency-card {
+    grid-column: 1 / -1;
+    background: var(--gradient-accent);
+    color: var(--color-white);
+}
+
+.info-card-contact.emergency-card h3 {
+    color: var(--color-white);
+}
+
+.info-card-contact.emergency-card p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.emergency-phone {
+    background: var(--gradient-accent);
+    color: var(--color-white) !important;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 24px !important;
+    font-weight: 700;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+}
+
+.emergency-phone:hover {
+    animation: none;
+    transform: scale(1.05);
+}
+
+/* ===== ФОРМА ОБРАТНОЙ СВЯЗИ ===== */
+.contact-form {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    color: var(--color-text);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-form h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+}
+
+.form-group-contact {
+    margin-bottom: 20px;
+}
+
+.form-group-contact input,
+.form-group-contact textarea,
+.form-group-contact select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-family: var(--font-family);
+    transition: all var(--transition-base);
+    background: var(--color-bg);
+}
+
+.form-group-contact input:focus,
+.form-group-contact textarea:focus,
+.form-group-contact select:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 4px var(--color-primary-bg);
+    background: var(--color-white);
+}
+
+.submit-btn-contact {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 18px 40px;
+    border-radius: var(--radius-md);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all var(--transition-base);
+}
+
+.submit-btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-primary);
+}
+
+.submit-btn-contact:active {
+    transform: translateY(0);
+}
+
+/* ===== КАРТА ===== */
+.map-section {
+    padding: 80px 0;
+    background: var(--color-white);
+}
+
+.map-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.map-title {
+    text-align: center;
+    font-size: 36px;
+    color: var(--color-text);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.map-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    border-radius: 2px;
+}
+
+.map-box {
+    height: 400px;
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: var(--color-white);
+    font-size: 24px;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.map-placeholder:hover {
+    filter: brightness(1.1);
+}
+
+.map-placeholder i {
+    font-size: 64px;
+}
+
+.map-note {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+.map-click-hint {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ===== РЕКВИЗИТЫ ===== */
+.details-section {
+    padding: 80px 0;
+    background: var(--color-bg);
+}
+
+.details-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.details-grid h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-text);
+    font-size: 24px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.details-grid h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.details-row {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--color-border-light);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    border-radius: 4px;
+}
+
+.details-row:hover {
+    background: var(--color-primary-bg);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.details-row:last-child {
+    border-bottom: none;
+}
+
+.details-label {
+    width: 200px;
+    font-weight: 600;
+    color: var(--color-text);
+    flex-shrink: 0;
+}
+
+.details-value {
+    flex: 1;
+    color: var(--color-text-secondary);
+    word-break: break-all;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-hero {
+        padding: 60px 0;
+    }
+
+    .contacts-hero h1 {
+        font-size: 32px;
+    }
+
+    .contacts-hero p {
+        font-size: 16px;
+    }
+
+    .contacts-info-section {
+        padding: 50px 0;
+    }
+
+    .contacts-grid {
+        gap: 25px;
+        padding: 0 15px;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .contact-form h3 {
+        font-size: 22px;
+    }
+
+    .map-box {
+        height: 300px;
+    }
+
+    .map-title {
+        font-size: 28px;
+    }
+
+    .details-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .details-label {
+        width: 100%;
+    }
+
+    .details-grid {
+        padding: 25px;
+    }
+
+    .emergency-phone {
+        font-size: 20px !important;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-hero {
+        padding: 40px 0;
+    }
+
+    .contacts-hero h1 {
+        font-size: 28px;
+    }
+
+    .contacts-info-section {
+        padding: 40px 0;
+    }
+
+    .info-card-contact {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .map-box {
+        height: 250px;
+    }
+
+    .map-placeholder {
+        font-size: 18px;
+    }
+
+    .map-placeholder i {
+        font-size: 48px;
+    }
+
+    .details-grid {
+        padding: 20px;
+    }
+
+    .details-grid h3 {
+        font-size: 20px;
+    }
+
+    .submit-btn-contact {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}

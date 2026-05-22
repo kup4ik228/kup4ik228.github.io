@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги — ТеплоЛюкс</title>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/services.css">
+</head>
+<body>
+
+    <!-- ===== ШАПКА ===== -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-left">
+                <button class="burger-menu" id="burgerMenu" aria-label="Меню">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+                <a href="index.html" class="logo-link">
+                    <div class="logo-wrapper">
+                        <img src="img/Logo.png" alt="ТеплоЛюкс" class="logo-img">
+                    </div>
+                </a>
+            </div>
+
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><span class="nav-text">Главная</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tariffs.html" class="nav-link"><span class="nav-text">Тарифы</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="services.html" class="nav-link"><span class="nav-text">Услуги</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contacts.html" class="nav-link"><span class="nav-text">Контакты</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <div class="contact-block">
+                    <a href="tel:+73512345678" class="contact-phone">
+                        <svg class="phone-icon" viewBox="0 0 24 24" width="18" height="18">
+                            <path fill="currentColor" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        <span>+7 (351) 234-56-78</span>
+                    </a>
+                    <span class="work-time">Круглосуточно</span>
+                </div>
+                <button class="reception-btn" onclick="window.location.href='reception.html'">
+                    <svg class="btn-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span>Виртуальная приёмная</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <div class="mobile-logo">
+                    <img src="img/Logo.png" alt="ТеплоЛюкс">
+                </div>
+                <button class="close-menu" id="closeMenu" aria-label="Закрыть меню">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="mobile-user-info">
+                <div class="mobile-user-avatar">
+                    <svg viewBox="0 0 24 24" width="40" height="40">
+                        <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="mobile-user-name">Гость</div>
+                <div class="mobile-user-status">Не авторизован</div>
+            </div>
+            
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item" style="--item-index: 0">
+                        <a href="index.html" class="mobile-nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                            </svg>
+                            <span>Главная</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item" style="--item-index: 1">
+                        <a href="tariffs.html" class="mobile-nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                            </svg>
+                            <span>Тарифы</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item" style="--item-index: 2">
+                        <a href="services.html" class="mobile-nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-1 .05 1.16.84 2 1.87 2 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                            </svg>
+                            <span>Услуги</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item" style="--item-index: 3">
+                        <a href="contacts.html" class="mobile-nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm6-1.8C18 6.57 15.35 4 12 4s-6 2.57-6 6.2c0 2.34 1.95 5.44 6 9.14 4.05-3.7 6-6.8 6-9.14z"/>
+                            </svg>
+                            <span>Контакты</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item" style="--item-index: 4">
+                        <a href="reception.html" class="mobile-nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20">
+                                <path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span>Виртуальная приёмная</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="mobile-quick-contacts">
+                <div class="mobile-quick-title">Быстрые контакты</div>
+                <div class="mobile-quick-grid">
+                    <a href="tel:+73512345678" class="mobile-quick-item">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        <span>Позвонить</span>
+                    </a>
+                    <a href="mailto:info@teplolux.ru" class="mobile-quick-item">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span>Email</span>
+                    </a>
+                    <a href="#" class="mobile-quick-item" onclick="HeaderAPI.openMap()">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Адрес</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mobile-menu-footer">
+                <div class="mobile-social">
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.8c4.56-.93 8-4.96 8-9.8z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 01-1.93.07 4.28 4.28 0 004 2.98 8.521 8.521 0 01-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M21.8 8s-.2-1.3-.7-1.9c-.7-.8-1.5-.8-1.9-.8-2.7-.2-6.8-.2-6.8-.2h-.1s-4 0-6.8.2c-.4 0-1.2 0-1.9.8-.5.6-.7 1.9-.7 1.9S3 9.5 3 11.1v1.5c0 1.6.2 3.2.2 3.2s.2 1.3.7 1.9c.7.8 1.7.8 2.1.8 1.5.2 6.5.2 6.5.2s4 0 6.8-.2c.4 0 1.2 0 1.9-.8.5-.6.7-1.9.7-1.9s.2-1.6.2-3.2v-1.5c0-1.6-.2-3.1-.2-3.1zM9.8 14.5v-6l5.5 3-5.5 3z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="mobile-copyright">&copy; 2024 ТеплоЛюкс</p>
+            </div>
+        </div>
+        
+        <div class="menu-overlay" id="menuOverlay"></div>
+    </header>
+
+    <!-- ===== ГЕРОЙ ===== -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Наши услуги</h1>
+            <p>Профессиональные решения для теплоснабжения вашего дома</p>
+        </div>
+    </section>
+
+    <!-- ===== СЕТКА УСЛУГ ===== -->
+    <section class="services-grid-page">
+        <div class="container">
+            <h2>Что мы предлагаем</h2>
+            <div class="services-cards">
+                <!-- Карточка 1 -->
+                <div class="service-card-page">
+                    <div class="service-icon">🔧</div>
+                    <h3>Монтаж отопления</h3>
+                    <p>Профессиональный монтаж систем отопления любой сложности</p>
+                    <ul class="service-features">
+                        <li>Установка котлов</li>
+                        <li>Монтаж радиаторов</li>
+                        <li>Прокладка труб</li>
+                        <li>Пусконаладка</li>
+                    </ul>
+                    <div class="service-price">от 45 000 ₽</div>
+                    <button class="service-btn">Заказать</button>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="service-card-page">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Ремонт и обслуживание</h3>
+                    <p>Оперативный ремонт и техническое обслуживание теплосетей</p>
+                    <ul class="service-features">
+                        <li>Диагностика</li>
+                        <li>Замена узлов</li>
+                        <li>Промывка системы</li>
+                        <li>Аварийный выезд</li>
+                    </ul>
+                    <div class="service-price">от 2 500 ₽/час</div>
+                    <button class="service-btn">Заказать</button>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="service-card-page">
+                    <div class="service-icon">📊</div>
+                    <h3>Проектирование</h3>
+                    <p>Разработка проектной документации для теплоснабжения</p>
+                    <ul class="service-features">
+                        <li>Теплотехнический расчет</li>
+                        <li>Схемы разводки</li>
+                        <li>Подбор оборудования</li>
+                        <li>Сметная документация</li>
+                    </ul>
+                    <div class="service-price">от 15 000 ₽</div>
+                    <button class="service-btn">Заказать</button>
+                </div>
+
+                <!-- Карточка 4 -->
+                <div class="service-card-page">
+                    <div class="service-icon">🔌</div>
+                    <h3>Подключение к сетям</h3>
+                    <p>Подключение объектов к централизованным теплосетям</p>
+                    <ul class="service-features">
+                        <li>Сбор документов</li>
+                        <li>Согласование</li>
+                        <li>Технические условия</li>
+                        <li>Врезка в сеть</li>
+                    </ul>
+                    <div class="service-price">индивидуально</div>
+                    <button class="service-btn">Заказать</button>
+                </div>
+
+                <!-- Карточка 5 -->
+                <div class="service-card-page">
+                    <div class="service-icon">📝</div>
+                    <h3>Установка счетчиков</h3>
+                    <p>Монтаж и поверка приборов учета тепла</p>
+                    <ul class="service-features">
+                        <li>Подбор прибора</li>
+                        <li>Установка</li>
+                        <li>Пломбировка</li>
+                        <li>Регистрация</li>
+                    </ul>
+                    <div class="service-price">от 8 500 ₽</div>
+                    <button class="service-btn">Заказать</button>
+                </div>
+
+                <!-- Карточка 6 -->
+                <div class="service-card-page">
+                    <div class="service-icon">🏭</div>
+                    <h3>Для предприятий</h3>
+                    <p>Комплексные решения для промышленных объектов</p>
+                    <ul class="service-features">
+                        <li>Котельные</li>
+                        <li>Тепловые пункты</li>
+                        <li>Магистральные сети</li>
+                        <li>Автоматизация</li>
+                    </ul>
+                    <div class="service-price">по запросу</div>
+                    <button class="service-btn">Заказать</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРЕИМУЩЕСТВА ===== -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <div class="advantage-icon">⚡</div>
+                    <h4>Быстро</h4>
+                    <p>Выезжаем в день обращения</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">✅</div>
+                    <h4>Качественно</h4>
+                    <p>Гарантия на все работы 3 года</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">💰</div>
+                    <h4>Доступно</h4>
+                    <p>Прозрачные цены без скрытых платежей</p>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon">👨‍🔧</div>
+                    <h4>Профессионально</h4>
+                    <p>Специалисты с опытом от 10 лет</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЭТАПЫ РАБОТЫ ===== -->
+    <section class="steps-section">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Заявка</h4>
+                    <p>Оставляете заявку на сайте или по телефону</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Выезд специалиста</h4>
+                    <p>Бесплатный осмотр и консультация</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Расчет сметы</h4>
+                    <p>Прозрачный расчет стоимости работ</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>Выполнение работ</h4>
+                    <p>Качественно и в установленные сроки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">Как быстро вы приедете?</div>
+                    <div class="faq-answer">Выезжаем в день обращения. По срочным заявкам приезжаем в течение 2-х часов.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Даете ли вы гарантию?</div>
+                    <div class="faq-answer">Да, на все работы мы даем гарантию 3 года, на оборудование — гарантия от производителя.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Нужен ли выезд специалиста?</div>
+                    <div class="faq-answer">Для точного расчета стоимости монтажа или ремонта необходим выезд специалиста.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Какие документы выдаете?</div>
+                    <div class="faq-answer">Предоставляем договор, акт выполненных работ, гарантийный талон и чеки.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <img src="img/Logo.png" alt="ТеплоЛюкс">
+                </div>
+                <p class="copyright">&copy; 2024 ТеплоЛюкс<br>Все права защищены</p>
+            </div>
+            <div class="footer-column">
+                <h3>О компании</h3>
+                <ul class="footer-menu">
+                    <li><a href="#">О нашей компании</a></li>
+                    <li><a href="#">Наши преимущества</a></li>
+                    <li><a href="#">Безопасность на теплосетях</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Услуги и сервисы</h3>
+                <ul class="footer-menu">
+                    <li><a href="services.html">Различные виды работ на объектах</a></li>
+                    <li><a href="tariffs.html">Тарифы и нормативы</a></li>
+                    <li><a href="services.html">Установка приборов учёта</a></li>
+                    <li><a href="reception.html">Подключение к сети</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Информация</h3>
+                <ul class="footer-menu">
+                    <li><a href="index.html#restrictionsSection">Ограничения подачи тепла</a></li>
+                    <li><a href="reception.html">Узнать причины</a></li>
+                    <li><a href="reception.html">Виртуальная приёмная</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Кнопка наверх -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Наверх">&uarr;</button>
+
+    <!-- ===== СКРИПТЫ ===== -->
+    <script src="js/core.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/ui/header.js"></script>
+    <script src="js/ui/ui-helpers.js"></script>
+    <script src="js/pages/services.js"></script>
+</body>
+</html>

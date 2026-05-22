@@ -1,0 +1,516 @@
+/* ========================================
+   TARIFFS.CSS - Стили страницы тарифов
+   Содержит: герой, калькулятор, тарифные
+   планы, график отключений, поиск
+   ======================================== */
+
+/* ===== ГЕРОЙ ТАРИФОВ ===== */
+.tariffs-hero {
+    background: linear-gradient(135deg, rgba(184, 208, 255, 0.1), #B8D0FF);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.tariffs-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.tariffs-hero p {
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== КАЛЬКУЛЯТОР ===== */
+.calculator-section {
+    padding: 60px 20px;
+    background: var(--color-bg);
+}
+
+.calculator-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(145, 49, 255, 0.15);
+    transition: transform var(--transition-base);
+}
+
+.calculator-container:hover {
+    transform: translateY(-5px);
+}
+
+.calculator-container h2 {
+    text-align: center;
+    color: var(--color-text);
+    font-size: 28px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.calculator-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 2px;
+}
+
+/* Форма калькулятора */
+.calculator-form {
+    display: grid;
+    gap: 25px;
+}
+
+.calculator-form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.calculator-form .input-group label {
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 16px;
+}
+
+.calculator-form .input-group input,
+.calculator-form .input-group select {
+    padding: 14px 18px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-family: var(--font-family);
+    transition: all var(--transition-base);
+    background: var(--color-bg);
+}
+
+.calculator-form .input-group input:focus,
+.calculator-form .input-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: var(--color-white);
+    box-shadow: 0 0 0 4px var(--color-primary-bg);
+}
+
+.calculator-form .input-hint {
+    color: var(--color-text-muted);
+    font-size: 13px;
+}
+
+/* Кнопка расчёта */
+.calculate-btn {
+    background: var(--gradient-primary);
+    color: var(--color-white);
+    padding: 16px 30px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.calculate-btn:hover {
+    background: var(--gradient-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(145, 49, 255, 0.4);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+/* Карточка результата */
+.result-card {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--gradient-card);
+    border-radius: 16px;
+    text-align: center;
+    border: 2px solid rgba(145, 49, 255, 0.1);
+    animation: slideDown 0.5s ease;
+}
+
+.result-card h3 {
+    color: var(--color-text);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.result-sum {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin: 15px 0;
+    text-shadow: 2px 2px 4px rgba(145, 49, 255, 0.1);
+}
+
+.result-details {
+    background: var(--color-white);
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.result-details p {
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    margin: 0;
+    padding: 8px;
+    background: var(--color-bg);
+    border-radius: 8px;
+}
+
+.result-details span {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 16px;
+}
+
+.result-note {
+    color: var(--color-text-muted);
+    font-size: 13px;
+    display: block;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* ===== ТАРИФНЫЕ ПЛАНЫ ===== */
+.plans-section {
+    padding: 60px 20px;
+    background: var(--color-bg-alt);
+}
+
+.plans-section .section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--color-text);
+    margin-bottom: 40px;
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Карточка тарифа */
+.tariff-card {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(145, 49, 255, 0.1);
+    position: relative;
+    transition: all var(--transition-base);
+    text-align: center;
+}
+
+.tariff-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(145, 49, 255, 0.2);
+}
+
+.tariff-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Варианты бейджей */
+.tariff-card.eco .tariff-badge {
+    background: #83d27b;
+}
+
+.tariff-card.business .tariff-badge {
+    background: var(--color-info);
+}
+
+.tariff-card.pensioner .tariff-badge {
+    background: var(--color-accent);
+}
+
+.tariff-card.social .tariff-badge {
+    background: var(--color-warning);
+}
+
+.tariff-card h3 {
+    font-size: 22px;
+    color: var(--color-text);
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.tariff-price {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tariff-price span {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.tariff-price small {
+    display: block;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.tariff-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.tariff-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--color-border-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+}
+
+.tariff-list li:last-child {
+    border-bottom: none;
+}
+
+.tariff-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    margin-top: 10px;
+}
+
+.tariff-btn:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 0 5px 15px rgba(145, 49, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ===== ГРАФИК ОТКЛЮЧЕНИЙ ===== */
+.schedule-section {
+    padding: 60px 20px;
+    background: var(--color-white);
+}
+
+.section-header {
+    max-width: var(--max-width);
+    margin: 0 auto 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.schedule-filter {
+    flex: 0 0 auto;
+}
+
+/* Поиск улиц */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.street-search {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid var(--color-border);
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: var(--font-family);
+    transition: all var(--transition-base);
+    background: var(--color-white);
+}
+
+.street-search:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(145, 49, 255, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    fill: var(--color-primary);
+    pointer-events: none;
+}
+
+.search-counter {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+/* Таблица */
+.schedule-table {
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+.schedule-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.schedule-table th {
+    background: var(--color-bg);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.schedule-table tr:hover td {
+    background: var(--color-primary-bg);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 1024px) {
+    .tariffs-hero h1 {
+        font-size: 40px;
+    }
+
+    .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tariffs-hero {
+        padding: 40px 15px;
+    }
+
+    .tariffs-hero h1 {
+        font-size: 32px;
+    }
+
+    .tariffs-hero p {
+        font-size: 16px;
+    }
+
+    .calculator-container {
+        padding: 25px;
+        margin: 0 15px;
+    }
+
+    .calculator-container h2 {
+        font-size: 24px;
+    }
+
+    .result-sum {
+        font-size: 36px;
+    }
+
+    .result-details {
+        grid-template-columns: 1fr;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .plans-section .section-title {
+        font-size: 28px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-wrapper {
+        max-width: 100%;
+    }
+
+    .tariff-price span {
+        font-size: 28px;
+    }
+
+    .tariff-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tariffs-hero h1 {
+        font-size: 28px;
+    }
+
+    .calculator-container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .calculator-container h2 {
+        font-size: 22px;
+    }
+
+    .calculate-btn {
+        font-size: 16px;
+        padding: 14px 20px;
+    }
+
+    .result-sum {
+        font-size: 28px;
+    }
+
+    .tariff-price span {
+        font-size: 24px;
+    }
+
+    .schedule-section {
+        padding: 40px 10px;
+    }
+}
